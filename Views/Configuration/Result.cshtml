@@ -1,0 +1,77 @@
+﻿@model Config
+
+@{
+    ViewData["Title"] = "Result";
+    Layout = "_LayoutConfiguration.cshtml";
+}
+
+<script type="text/javascript">
+    function Start() {
+
+            window.location.href = '@Url.Action("Configure", "Configuration")?configurationId=@Html.Raw(Model.ConfigString)';
+        }
+</script>
+
+<div class="homecard homecard">
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Country</a>
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Brand</a>
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Model</a>
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Type</a>
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link active">Result</a>
+        </li>
+    </ul>
+
+    <h2 class="randomheader">This is your result.</h2>
+    <dl class="dl-horizontal randomformgroup">
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigCountry)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ConfigCountry.ConfigCountryName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigBrand)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ConfigBrand.ConfigBrandName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigModel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ConfigModel.ConfigModelName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfigType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ConfigType.ConfigTypeName)
+        </dd>
+    </dl>
+    @*<form class="randomform" asp-action="Random">
+        <input hidden asp-for="ConfigId" />
+
+        <div class="form-group randomformgroup">
+            <input type="submit" value="Start Configuration" class="btn btn-dark" />
+        </div>
+    </form>*@
+
+    <div class="row configrow">
+        <button type="submit" onclick="Start()" class="btn btn-dark btn-lg mx-auto"><i class="fas fa-play-circle"></i>&nbsp&nbspStart</button>
+        @*<button class="btn btn-danger mx-auto" onclick="Abort()">Abort</button>*@
+    </div>
+
+
+
+</div>

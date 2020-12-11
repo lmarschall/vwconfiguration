@@ -1,0 +1,213 @@
+﻿body {
+    padding-top: 5vh;
+    /*padding-bottom: 20px;*/
+}
+
+body:after {
+    /*padding-top: 50px;
+    padding-bottom: 20px;*/
+    content: "";
+    position: fixed; /* stretch a fixed position to the whole screen */
+    top: 0;
+    height: 100vh; /* fix for mobile browser address bar appearing disappearing */
+    left: 0;
+    right: 0;
+    z-index: -1; /* needed to keep in the background */
+    background: url(https://dl.dropbox.com/s/f6h4ri5s0kjcfns/configuration.jpg?dl=0) center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.card.model {
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 200px;
+    max-height: 200px;
+}
+
+li.nav-item.randomtab {
+    width: 20%;
+    text-align: center;
+    background-color: #343a40;
+    color: #fcfcfc;
+    opacity: 0.9;
+}
+
+h2.randomheader {
+    text-align: center;
+    padding-top: 5vh;
+}
+
+a.randomlink {
+    position: fixed;
+    left: 10vw;
+    top: 20vh;
+    width: 300px;
+    height: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: xx-large;
+    padding-top: 25px;
+}
+
+.nav-tabs .nav-link.disabled {
+    color: white;
+}
+
+.nav-tabs .nav-link.active:hover {
+    color: black;
+}
+
+form.randomform {
+    padding-top: 0vh;
+}
+
+.form-group.randomformgroup {
+    text-align: center;
+    padding-top: 5vh;
+}
+
+dl.dl-horizontal.randomformgroup {
+    text-align: center;
+    padding-top: 5vh;
+    font-size: 3vh;
+}
+
+/* Set padding to keep content from hitting the edges */
+.homecard {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.90);
+    height: 70vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+nav#navBar {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.fullscreen {
+    height: 100vh;
+}
+
+footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #343a40;
+    color: #9a9da0;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.container {
+    max-width: 80vw;
+}
+
+.list-group-item.list-group-item-light.choiceoption:hover {
+    color: white;
+    background-color: green;
+    cursor: pointer;
+}
+
+.carousel-indicators {
+    background-color: #343a40;
+}
+
+.list-group-item.option:hover {
+    color: white;
+    background-color: red;
+    cursor: pointer;
+}
+
+.btn.btn-link.choice {
+    color: black;
+    text-decoration: none;
+}
+
+.btn.btn-link.choice:hover {
+    color: white;
+    background-color: black;
+}
+
+.btn.btn-link:active {
+    color: white;
+    background-color: black;
+}
+
+.configrow {
+    padding-top: 20px;
+}
+
+.configleft {
+}
+
+.configright {
+
+}
+
+.configtop {
+
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+img.lozad.img-fluid.homeimage {
+    padding-top: 25vh;
+}
+
+p.hometext {
+    padding-top: 25vh;
+    font-size: 2.3vh;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+html {
+    font-size: 1rem;
+}
+
+@include media-breakpoint-up(sm) {
+    html {
+        font-size: 1.2rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    html {
+        font-size: 1.4rem;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    html {
+        font-size: 1.6rem;
+    }
+}

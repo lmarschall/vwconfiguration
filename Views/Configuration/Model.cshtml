@@ -1,0 +1,71 @@
+﻿@model Selection
+
+@{
+    ViewData["Title"] = "Model";
+    Layout = "_LayoutConfiguration.cshtml";
+}
+
+<div class="homecard homecard">
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Country</a>
+
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Brand</a>
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link active">Model</a>
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Type</a>
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Result</a>
+        </li>
+    </ul>
+
+    @*<div class="card-group">
+
+        @foreach (KeyValuePair<ConfigModel, Image> item in ViewBag.Choose)
+    {
+        <a onclick="SelectModel('@item.Key.ConfigModelId')">
+            <div class="card model">
+                <img src="@item.Value.ImageUrl" class="card-img-top" alt="@item.Value.ImageName">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Key.ConfigModelName</h5>
+                    @*<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </a>
+}
+        </div>*@
+
+        <h2 class="randomheader">Select your Model.</h2>
+
+        <form class="randomform" asp-action="Type">
+            <input hidden asp-for="SelectionId" />
+
+            <div class="form-group randomformgroup">
+                <select asp-for="SelectionModelCode" id="modelselect" asp-items="@ViewBag.Models" class="form-control mx-auto"></select>
+                @*<select asp-for="SelectionModelCode" id="modelselect" asp-items="@ViewBag.Models" class="form-control" hidden></select>*@
+            </div>
+            <div class="form-group randomformgroup">
+                <button type="submit" class="btn btn-dark"><i class="fas fa-angle-right"></i>&nbsp&nbspSelect</button>
+                @*<input hidden type="submit" id="modelsubmit" value="Select" class="btn btn-dark" />*@
+            </div>
+        </form>
+    </div>
+
+@*<script type="text/javascript">
+    function SelectModel(modelId)
+    {
+        var select = document.getElementById("modelselect");
+        var submit = document.getElementById("modelsubmit");
+
+        select.value = modelId;
+        submit.click();
+    }
+</script>*@

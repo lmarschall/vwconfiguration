@@ -1,0 +1,58 @@
+﻿@model Selection
+
+@{
+    ViewData["Title"] = "Model";
+    Layout = "_LayoutConfiguration.cshtml";
+}
+
+<div class="homecard homecard">
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Country</a>
+
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Brand</a>
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Model</a>
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link active">Type</a>
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Result</a>
+        </li>
+    </ul>
+
+    @*<div class="card-group">
+
+        @foreach (KeyValuePair<ConfigType, Image> item in ViewBag.Choose)
+        {
+            <a onclick="SelectModel('@item.Key.ConfigTypeId')">
+                <div class="card model">
+                    <img src="@item.Value.ImageUrl" class="card-img-top" alt="@item.Value.ImageName">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Key.ConfigTypeName</h5>
+                        @*<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </a>
+        }
+    </div>*@
+
+    <h2 class="randomheader">Select your Type.</h2>
+
+    <form class="randomform" asp-action="Result">
+        <input hidden asp-for="SelectionId" />
+
+        <div class="form-group randomformgroup">
+            <select asp-for="SelectionTypeCode" asp-items="@ViewBag.Types" class="form-control mx-auto"></select>
+        </div>
+        <div class="form-group randomformgroup">
+            <button type="submit" class="btn btn-dark"><i class="fas fa-angle-right"></i>&nbsp&nbspSelect</button>
+        </div>
+    </form>
+</div>

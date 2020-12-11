@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Config>
+
+@{
+    ViewData["Title"] = "Result";
+    Layout = "_LayoutConfiguration.cshtml";
+}
+
+<script type="text/javascript">
+    function OpenConfig(configId)
+    {
+        window.location.href = '@Url.Action("Configure", "Configuration")?configurationId=' + configId;
+    }
+</script>
+
+<div class="homecard homecard">
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(model => model.ConfigCountry)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.ConfigBrand)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.ConfigModel)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.ConfigType)</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Config item in Model)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(modelItem => item.ConfigCountry.ConfigCountryName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ConfigBrand.ConfigBrandName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ConfigModel.ConfigModelName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ConfigType.ConfigTypeName)</td>
+                    <td><button class="btn btn-dark mx-auto" onclick="OpenConfig('@item.ConfigString')">Open</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

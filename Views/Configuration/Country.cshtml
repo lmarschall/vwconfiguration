@@ -1,0 +1,40 @@
+﻿@model Selection
+
+@{
+    ViewData["Title"] = "Country";
+    Layout = "_LayoutConfiguration.cshtml";
+}
+
+<div class="card homecard">
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item randomtab">
+            <a class="nav-link active">Country</a>
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Brand</a>
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Model</a>
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Type</a>
+        </li>
+        <li class="nav-item randomtab">
+            <a class="nav-link disabled">Result</a>
+        </li>
+    </ul>
+
+    <h2 class="randomheader">Select your Country.</h2>
+        <form class="randomform" asp-action="Brand">
+            <input hidden asp-for="SelectionId" />
+
+            <div class="form-group randomformgroup">
+                <select asp-for="SelectionCountryCode" asp-items="@ViewBag.Countries" class="form-control mx-auto"></select>
+            </div>
+            <div class="form-group randomformgroup">
+                <button type="submit" class="btn btn-dark"><i class="fas fa-angle-right"></i>&nbsp&nbspSelect</button>
+            </div>
+        </form>
+</div>
+
